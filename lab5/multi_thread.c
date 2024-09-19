@@ -8,7 +8,7 @@
 
 
 #define CPU_CORES 2
-#define scale 4
+#define scale 4 //the length of side of each block
 
 typedef struct {
   int m;
@@ -54,7 +54,7 @@ void *part(void *args)
   int i, j, p;
   for(i=start_row;i<end_row;i += scale)
   {
-    for(j=0;j<n;j += scale)
+    for(j=0;j<n;j += scale) //disassemble each part into several blocks
     {
       block(m, n, k, 
             a, lda, 
