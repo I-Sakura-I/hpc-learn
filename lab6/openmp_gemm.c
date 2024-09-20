@@ -47,9 +47,7 @@ void MY_MMult(int m, int n, int k,
               double *b, int ldb,
               double *c, int ldc)
 {
-  pthread_t p[CPU_CORES];
-
-  int i, rc;
+  int i;
   #pragma omp parallel for
   for(i=0;i<CPU_CORES;i++)
   {
